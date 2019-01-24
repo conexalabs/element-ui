@@ -3,18 +3,15 @@
     <el-container>
       <el-row type="flex">
         <el-col :span="24">
-          <el-date-picker
-            v-model="value3"
-            :type="type"
-            format="Week WW"
-            placeholder="Pick a week"
-            :allowHeader="true">
-            <template slot="header">
-              <div>
-                <el-button @click="changeType">CLICK AKI</el-button>
-              </div>
-            </template>
-          </el-date-picker>
+          <el-form :model="form" :rules="rules" ref="form">
+            <el-form-item label="Email" prop="name">
+              <el-input v-model="form.name" type="text" />
+            </el-form-item>
+            <el-form-item label="Email" prop="email">
+              <el-input v-model="form.email" type="email" />
+            </el-form-item>
+            <el-button native-type="submit">submit</el-button>
+          </el-form>
         </el-col>      
       </el-row>
     </el-container>
@@ -24,24 +21,22 @@
 	export default {
     data() {
       return {
-        value3: '',
-        type: 'week'
+        form: {
+          name: '',
+          email: ''
+        },
+        rules: {
+          email: [
+            { required: true, trigger: 'blur', fullField: 'Email', type: 'email' }
+          ]
+        }
       }
     },
     methods: {
-      changeType () {
-        let self = this
-        switch (self.type) {
-          case 'week':
-            this.type = 'daterange'
-          break
-          case 'daterange':
-            this.type = 'week'
-          break
-        }
-        self.$forceUpdate()
-      }
+      submit() {
+        this.$refs.form.validate()
+      } 
     }
-	}
+  }
 </script>
 <style lang="scss"></style>

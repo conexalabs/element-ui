@@ -340,6 +340,17 @@
     mounted() {
       this.resizeTextarea();
       this.updateIconOffset();
+      if (this.$refs.input) {
+        this.$refs.input.addEventListener('animationstart', (e) => {
+          switch (e.animationName) {
+            case 'onAutoFillStart':
+              return this.onAutoFillStart();
+  
+            case 'onAutoFillCancel':
+              return this.onAutoFillCancel();
+          }
+        });
+      }
     },
 
     updated() {
