@@ -99,8 +99,7 @@
   @include e(content) {
     line-height: 40px;
     position: relative;
-    // font-size: 14px;
-    font-size: 0;
+    font-size: 14px;
     line-height: initial;
     @include utils-clearfix;
 
