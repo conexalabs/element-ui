@@ -1,15 +1,16 @@
 @import 'common/var';
-@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,700');
+@import 'bootstrap/variables';
+@import url('https://fonts.googleapis.com/css?family=Barlow:300,400,700');
 
 @font-face{
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: $--font-family-base;
   font-weight:400;
   color: $--color-text-primary;
   font-size: $--font-size-base;
 }
 
 body,html {
-  font-family: 'Nunito Sans', sans-serif !important; 
+  font-family: $--font-family-base !important; 
   font-weight: 400;
   font-size: $--font-size-base;
   color: $--color-text-primary;
