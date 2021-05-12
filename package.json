@@ -58,7 +58,7 @@
     "popper.js": "^1.14.4",
     "resize-observer-polyfill": "^1.5.0",
     "slideout": "git+https://github.com/conexalabs/slideout.git#master",
-    "swiper": "^4.4.1",
+    "swiper": "^6.5.1",
     "throttle-debounce": "^1.0.1"
   },
   "peerDependencies": {
